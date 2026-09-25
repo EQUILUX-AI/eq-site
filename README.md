@@ -4,7 +4,7 @@ Equilux AI marketing site (port of the Google Sites page). Astro + Keystatic, de
 
 - Pages are prerendered static HTML.
 - Content lives in the repo: `src/content/*.yaml` (Home, Get Started, Site settings) and `src/content/tips/*.mdoc` (Energy Tips). Images in `public/images/`.
-- Editing UI at `/keystatic`. Locally it writes to disk; in production it commits to GitHub (`andrewfam-eqai/eq-site`), which triggers a Vercel redeploy.
+- Editing UI at `/keystatic`. Locally it writes to disk; in production it commits to GitHub (`EQUILUX-AI/eq-site`), which triggers a Vercel redeploy.
 
 ## Develop
 
@@ -23,7 +23,7 @@ The deployed `/api/keystatic` routes return 500 until the env vars below are set
    - Callback URL: `https://<domain>/api/keystatic/github/oauth/callback`
    - Check "Request user authorization (OAuth) during installation"; uncheck Webhook "Active"
    - Repository permissions: Contents **Read and write**, Metadata **Read-only**, Pull requests **Read-only**
-2. On the app page: note the Client ID, generate a client secret, then "Install App" on `andrewfam-eqai/eq-site`.
+2. On the app page: note the Client ID, generate a client secret, then "Install App" on `EQUILUX-AI/eq-site`.
 3. In Vercel → Project → Settings → Environment Variables (Production), set:
    - `KEYSTATIC_GITHUB_CLIENT_ID` — the Client ID
    - `KEYSTATIC_GITHUB_CLIENT_SECRET` — the client secret

@@ -18,7 +18,7 @@ const titledItems = (label: string) =>
 
 export default config({
   storage: import.meta.env.PROD
-    ? { kind: 'github', repo: 'EQUILUX-AI/eq-site' }
+    ? { kind: 'github', repo: 'andrewfam-eqai/eq-site' }
     : { kind: 'local' },
   ui: {
     brand: { name: 'Equilux AI' },

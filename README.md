@@ -18,7 +18,7 @@ npm run build
 
 The deployed `/api/keystatic` routes return 500 until the env vars below are set.
 
-1. Create a GitHub App at github.com/settings/apps/new:
+1. Create a GitHub App under the org at github.com/organizations/EQUILUX-AI/settings/apps/new:
    - Homepage URL: `https://<domain>`
    - Callback URL: `https://<domain>/api/keystatic/github/oauth/callback`
    - Check "Request user authorization (OAuth) during installation"; uncheck Webhook "Active"

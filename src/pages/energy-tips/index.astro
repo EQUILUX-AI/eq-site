@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const tips = await getCollection('tips');
+---
+
+<Base title="Energy Tips">
+  <section class="container narrow">
+    <h1>Equilux Tips</h1>
+    <ul class="tip-list">
+      {tips.map((tip) => (
+        <li>
+          <a href={`/energy-tips/${tip.id}`}>
+            <h2>{tip.data.title}</h2>
+            {tip.data.subtitle && <p>{tip.data.subtitle}</p>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

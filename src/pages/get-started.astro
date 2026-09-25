@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { reader } from '../lib/reader';
+
+const page = await reader.singletons.getStarted.readOrThrow();
+const embedUrl = page.formUrl ? `${page.formUrl}?embedded=true` : null;
+---
+
+<Base title={page.heading}>
+  <section class="container narrow">
+    <h1>{page.heading}</h1>
+    {embedUrl && (
+      <iframe class="form-embed" src={embedUrl} title="Customer Registration Form" loading="lazy">
+        Loading…
+      </iframe>
+    )}
+    {page.formUrl && (
+      <p><a href={page.formUrl} target="_blank" rel="noopener">Open the form in a new window</a></p>
+    )}
+  </section>
+</Base>

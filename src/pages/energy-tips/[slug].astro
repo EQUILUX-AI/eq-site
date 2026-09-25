@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const tips = await getCollection('tips');
+  return tips.map((tip) => ({ params: { slug: tip.id }, props: { tip } }));
+}
+
+const { tip } = Astro.props;
+const { Content } = await render(tip);
+---
+
+<Base title={tip.data.title}>
+  <article class="container narrow prose">
+    <p class="eyebrow"><a href="/energy-tips">Equilux Tips</a></p>
+    <h1>{tip.data.title}</h1>
+    {tip.data.subtitle && <p class="lead">{tip.data.subtitle}</p>}
+    <Content />
+  </article>
+</Base>

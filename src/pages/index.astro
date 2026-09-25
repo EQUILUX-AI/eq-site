@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import { reader } from '../lib/reader';
+
+const home = await reader.singletons.home.readOrThrow();
+const { hero, features, ctas, savings, about, faq, contact } = home;
+---
+
+<Base>
+  <section class="hero" style={hero.image ? `--hero-image: url('${hero.image}')` : undefined}>
+    <div class="hero-inner">
+      <h1>{hero.heading}</h1>
+      <p>{hero.subheading}</p>
+    </div>
+  </section>
+
+  <section class="container features">
+    {features.map((f) => (
+      <article class="feature">
+        {f.image && <img src={f.image} alt="" loading="lazy" />}
+        <div>
+          <h2>{f.heading}</h2>
+          <p>{f.body}</p>
+        </div>
+      </article>
+    ))}
+  </section>
+
+  <section class="container ctas">
+    {ctas.map((c, i) => (
+      <a class={i === 0 ? 'button' : 'button secondary'} href={c.href}>{c.label}</a>
+    ))}
+  </section>
+
+  <section class="container split">
+    {savings.image && <img src={savings.image} alt="" loading="lazy" />}
+    <div>
+      <h2 class="big">{savings.heading}</h2>
+      <ul class="points">
+        {savings.items.map((p) => <li><strong>{p.title}:</strong> {p.body}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="container narrow">
+      <h2>{about.heading}</h2>
+      <p class="lead">{about.lead}</p>
+      <p>{about.body}</p>
+      <ul class="points">
+        {about.items.map((p) => <li><strong>{p.title}:</strong> {p.body}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="container narrow">
+    <h2>{faq.heading}</h2>
+    {faq.items.map((q) => (
+      <details class="faq">
+        <summary>{q.question}</summary>
+        <p>{q.answer}</p>
+      </details>
+    ))}
+  </section>
+
+  <section class="container narrow contact">
+    <h2>{contact.heading}</h2>
+    <p>📞 <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></p>
+    <p>✉️ <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+    <p>📍 {contact.address}</p>
+  </section>
+</Base>

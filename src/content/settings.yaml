@@ -1,0 +1,10 @@
+siteName: EQUILUX AI
+logo: /images/site/logo.png
+nav:
+  - label: Home
+    href: /
+  - label: Energy Tips
+    href: /energy-tips
+  - label: Get Started
+    href: /get-started
+footer: EQUILUX AI PTE LTD | SINGAPORE

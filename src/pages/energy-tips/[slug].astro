@@ -1,21 +1,27 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { getSortedTips, formatDate } from '../../lib/tips';
 
 export async function getStaticPaths() {
-  const tips = await getCollection('tips');
-  return tips.map((tip) => ({ params: { slug: tip.id }, props: { tip } }));
+  const tips = await getSortedTips();
+  return tips.map((tip, i) => ({ params: { slug: tip.id }, props: { tip, next: tips[i + 1] } }));
 }
 
-const { tip } = Astro.props;
+const { tip, next } = Astro.props;
 const { Content } = await render(tip);
 ---
 
-<Base title={tip.data.title}>
+<Base title={tip.data.title} description={tip.data.subtitle}>
   <article class="container narrow prose">
-    <p class="eyebrow"><a href="/energy-tips">Equilux Tips</a></p>
+    <p class="eyebrow"><a href="/energy-tips">Energy Tips</a></p>
     <h1>{tip.data.title}</h1>
     {tip.data.subtitle && <p class="lead">{tip.data.subtitle}</p>}
+    <time datetime={tip.data.date.toISOString().slice(0, 10)}>{formatDate(tip.data.date)}</time>
     <Content />
+    <nav class="tip-nav">
+      <a href="/energy-tips">← All tips</a>
+      {next && <a href={`/energy-tips/${next.id}`}>Next: {next.data.title} →</a>}
+    </nav>
   </article>
 </Base>

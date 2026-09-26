@@ -1,17 +1,18 @@
 ---
-import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import { getSortedTips, formatDate } from '../../lib/tips';
 
-const tips = await getCollection('tips');
+const tips = await getSortedTips();
 ---
 
 <Base title="Energy Tips">
   <section class="container narrow">
-    <h1>Equilux Tips</h1>
+    <h1>Energy Tips</h1>
     <ul class="tip-list">
       {tips.map((tip) => (
         <li>
           <a href={`/energy-tips/${tip.id}`}>
+            <time datetime={tip.data.date.toISOString().slice(0, 10)}>{formatDate(tip.data.date)}</time>
             <h2>{tip.data.title}</h2>
             {tip.data.subtitle && <p>{tip.data.subtitle}</p>}
           </a>

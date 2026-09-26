@@ -1,17 +1,17 @@
 hero:
   heading: Cut Your Home Energy Bills on Autopilot.
   subheading: Equilux AI optimizes your solar, EV charger, and home appliances in real time—saving you money without changing your routine.
-  image: /images/home/hero.jpg
+  image: /images/home/hero.webp
 features:
   - heading: Track Every Watt in Real Time
     body: See exactly what solar panels generate and appliances draw on your mobile.
-    image: /images/home/track.jpg
+    image: /images/home/track.webp
   - heading: Smart Automation, Zero Hassle
     body: Automatically shift heavy electricity usage to low-cost or solar hours.
-    image: /images/home/automation.jpg
+    image: /images/home/automation.webp
   - heading: Lower Monthly Utility Bills
     body: Reduce grid dependency and maximize ROI on your smart home or solar setup.
-    image: /images/home/bills.jpg
+    image: /images/home/bills.webp
 ctas:
   - label: Book a Free Home Energy Consultation
     href: /get-started
@@ -19,7 +19,7 @@ ctas:
     href: /get-started
 savings:
   heading: Up to 30% Savings on Monthly Energy
-  image: /images/home/savings.png
+  image: /images/home/savings.webp
   items:
     - title: Zero Setup Hassle
       body: Integrates seamlessly with your existing solar panels, EV charger, and smart appliances.

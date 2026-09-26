@@ -4,11 +4,16 @@ import { reader } from '../lib/reader';
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
 const settings = await reader.singletons.settings.readOrThrow();
+const { title, description = settings.description } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const fullTitle = title ? `${title} | ${settings.siteName}` : settings.siteName;
+const home = await reader.singletons.home.readOrThrow();
+// og:image must be absolute, so it needs `site` set in astro.config.mjs.
+const ogImage = Astro.site && home.hero.image ? new URL(home.hero.image, Astro.site).href : null;
 ---
 
 <!doctype html>
@@ -16,8 +21,15 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/png" href={settings.logo ?? '/favicon.svg'} />
-    <title>{title ? `${title} | ${settings.siteName}` : settings.siteName}</title>
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={settings.siteName} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
   </head>
   <body>
     <header class="site-header">
@@ -27,7 +39,11 @@ const path = Astro.url.pathname.replace(/\/$/, '') || '/';
       </a>
       <nav>
         {settings.nav.map((item) => (
-          <a href={item.href} aria-current={item.href === path ? 'page' : undefined}>
+          <a
+            href={item.href}
+            class={item.button ? 'button' : undefined}
+            aria-current={path === item.href || path.startsWith(`${item.href}/`) ? 'page' : undefined}
+          >
             {item.label}
           </a>
         ))}

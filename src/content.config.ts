@@ -8,6 +8,7 @@ const tips = defineCollection({
   schema: z.object({
     title: z.string(),
     subtitle: z.string().optional(),
+    date: z.coerce.date(),
   }),
 });
 

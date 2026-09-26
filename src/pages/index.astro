@@ -11,6 +11,11 @@ const { hero, features, ctas, savings, about, faq, contact } = home;
     <div class="hero-inner">
       <h1>{hero.heading}</h1>
       <p>{hero.subheading}</p>
+      <div class="ctas">
+        {ctas.map((c, i) => (
+          <a class={i === 0 ? 'button' : 'button secondary'} href={c.href}>{c.label}</a>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -23,12 +28,6 @@ const { hero, features, ctas, savings, about, faq, contact } = home;
           <p>{f.body}</p>
         </div>
       </article>
-    ))}
-  </section>
-
-  <section class="container ctas">
-    {ctas.map((c, i) => (
-      <a class={i === 0 ? 'button' : 'button secondary'} href={c.href}>{c.label}</a>
     ))}
   </section>
 

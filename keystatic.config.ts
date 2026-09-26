@@ -34,11 +34,17 @@ export default config({
       format: { data: 'yaml' },
       schema: {
         siteName: fields.text({ label: 'Site name' }),
+        description: fields.text({
+          label: 'Site description',
+          description: 'Shown in search results and link previews.',
+          multiline: true,
+        }),
         logo: image('Logo', 'site'),
         nav: fields.array(
           fields.object({
             label: fields.text({ label: 'Label' }),
             href: fields.text({ label: 'Link' }),
+            button: fields.checkbox({ label: 'Show as button' }),
           }),
           { label: 'Navigation', itemLabel: (p) => p.fields.label.value }
         ),
@@ -136,6 +142,7 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
         subtitle: fields.text({ label: 'Subtitle' }),
+        date: fields.date({ label: 'Published date', validation: { isRequired: true } }),
         content: fields.markdoc({
           label: 'Content',
           options: { image: { directory: 'public/images/tips', publicPath: '/images/tips/' } },

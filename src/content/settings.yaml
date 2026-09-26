@@ -1,10 +1,11 @@
 siteName: EQUILUX AI
-logo: /images/site/logo.png
+description: Equilux AI optimizes your solar, EV charger, and home appliances in real time—saving you money without changing your routine.
+logo: /images/site/logo.webp
 nav:
-  - label: Home
-    href: /
   - label: Energy Tips
     href: /energy-tips
+    button: false
   - label: Get Started
     href: /get-started
+    button: true
 footer: EQUILUX AI PTE LTD | SINGAPORE

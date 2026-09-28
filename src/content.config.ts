@@ -12,4 +12,13 @@ const tips = defineCollection({
   }),
 });
 
-export const collections = { tips };
+// Privacy Policy and Terms of Service, edited in Keystatic (collection `legal`).
+const legal = defineCollection({
+  loader: glob({ pattern: '**/*.mdoc', base: './src/content/legal' }),
+  schema: z.object({
+    title: z.string(),
+    lastUpdated: z.coerce.date(),
+  }),
+});
+
+export const collections = { tips, legal };

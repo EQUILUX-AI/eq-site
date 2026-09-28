@@ -52,6 +52,9 @@ const ogImage = Astro.site && home.hero.image ? new URL(home.hero.image, Astro.s
     <main>
       <slot />
     </main>
-    <footer class="site-footer">{settings.footer}</footer>
+    <footer class="site-footer">
+      <p>{settings.footer}</p>
+      <p><a href="/legal/privacy-policy">Privacy Policy</a> · <a href="/legal/terms-of-service">Terms of Service</a></p>
+    </footer>
   </body>
 </html>

@@ -23,7 +23,7 @@ export default config({
   ui: {
     brand: { name: 'Equilux AI' },
     navigation: {
-      Pages: ['home', 'getStarted', 'tips'],
+      Pages: ['home', 'getStarted', 'tips', 'legal'],
       Site: ['settings'],
     },
   },
@@ -147,6 +147,17 @@ export default config({
           label: 'Content',
           options: { image: { directory: 'public/images/tips', publicPath: '/images/tips/' } },
         }),
+      },
+    }),
+    legal: collection({
+      label: 'Legal',
+      slugField: 'title',
+      path: 'src/content/legal/*',
+      format: { contentField: 'content' },
+      schema: {
+        title: fields.slug({ name: { label: 'Title' } }),
+        lastUpdated: fields.date({ label: 'Last updated', validation: { isRequired: true } }),
+        content: fields.markdoc({ label: 'Content' }),
       },
     }),
   },

@@ -4,12 +4,52 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Open on your phone">
   <section class="container narrow not-found">
-    <h1>Open this link on your phone</h1>
-    <p>
-      This link is meant for the Equilux app. Please open it on the phone where the
-      Equilux app is installed.
-    </p>
-    <p>Email verification and password resets can only be completed in the app.</p>
+    <div data-state="default">
+      <h1>Open this link on your phone</h1>
+      <p>
+        This link is meant for the Equilux app. Please open it on the phone where the
+        Equilux app is installed.
+      </p>
+      <p>Password resets can only be completed in the app.</p>
+    </div>
+    <div data-state="verifying" hidden>
+      <h1>Verifying your email…</h1>
+    </div>
+    <div data-state="verified" hidden>
+      <h1>Email verified</h1>
+      <p>Your email has been successfully verified. You can now log in on the Equilux app.</p>
+    </div>
+    <div data-state="invalid" hidden>
+      <h1>Link expired</h1>
+      <p>The email verification link has expired. Please request a new one from the Equilux app.</p>
+    </div>
+    <div data-state="error" hidden>
+      <h1>Something went wrong</h1>
+      <p>We couldn’t verify your email right now. Please try the link again in a moment.</p>
+    </div>
     <p><a class="button" href="/">Back to home</a></p>
   </section>
 </Base>
+
+<script>
+  // Email verification links (page=login&confirm_code=…) are completed here,
+  // the same way eq-client does when the link opens the app.
+  const show = (state: string) => {
+    document.querySelectorAll<HTMLElement>('[data-state]').forEach((el) => {
+      el.hidden = el.dataset.state !== state;
+    });
+  };
+
+  const key = new URLSearchParams(location.search).get('confirm_code');
+  if (key) {
+    show('verifying');
+    fetch('/api/verify-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ key }),
+    })
+      .then((res) => res.json())
+      .then(({ result }) => show(result))
+      .catch(() => show('error'));
+  }
+</script>

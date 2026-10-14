@@ -1,6 +1,6 @@
 siteName: EQUILUX AI
 description: Equilux AI optimizes your solar, EV charger, and home appliances in real time—saving you money without changing your routine.
-logo: /images/site/logo.webp
+logo: /images/site/logo.svg
 nav:
   - label: Energy Tips
     href: /energy-tips

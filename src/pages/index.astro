@@ -42,7 +42,7 @@ const { hero, features, ctas, savings, about, faq, contact } = home;
   </section>
 
   <section class="band">
-    <div class="container narrow">
+    <div class="container">
       <h2>{about.heading}</h2>
       <p class="lead">{about.lead}</p>
       <p>{about.body}</p>
@@ -52,7 +52,7 @@ const { hero, features, ctas, savings, about, faq, contact } = home;
     </div>
   </section>
 
-  <section class="container narrow">
+  <section class="container">
     <h2>{faq.heading}</h2>
     {faq.items.map((q) => (
       <details class="faq">
@@ -62,7 +62,7 @@ const { hero, features, ctas, savings, about, faq, contact } = home;
     ))}
   </section>
 
-  <section class="container narrow contact">
+  <section class="container contact">
     <h2>{contact.heading}</h2>
     <p>📞 <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></p>
     <p>✉️ <a href={`mailto:${contact.email}`}>{contact.email}</a></p>

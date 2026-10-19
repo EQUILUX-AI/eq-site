@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import { reader } from '../lib/reader';
+
+const page = await reader.singletons.support.readOrThrow();
+// Contact details are shared with the home page's Contact section.
+const { contact } = await reader.singletons.home.readOrThrow();
+const deleteHref = `mailto:${contact.email}?${new URLSearchParams({
+  subject: 'Account deletion request',
+  body: 'Please delete my Equilux AI account and its associated data.',
+}).toString().replace(/\+/g, '%20')}`;
+---
+
+<Base title={page.heading}>
+  <section class="container narrow">
+    <h1>{page.heading}</h1>
+    <p class="lead">{page.intro}</p>
+    {page.faq.map((q) => (
+      <details class="faq">
+        <summary>{q.question}</summary>
+        <p>{q.answer}</p>
+      </details>
+    ))}
+  </section>
+
+  <section class="container narrow" id="delete-account">
+    <h2>Delete your account</h2>
+    <p>
+      To delete your Equilux AI account and its associated data, send us a request from the email
+      address registered to your account. We will delete or anonymise your data as described in our
+      <a href="/legal/privacy-policy">Privacy Policy</a>.
+    </p>
+    <p><a class="button" href={deleteHref}>Request account deletion</a></p>
+  </section>
+
+  <section class="container narrow contact">
+    <h2>{contact.heading}</h2>
+    <p>📞 <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></p>
+    <p>✉️ <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+    <p>📍 {contact.address}</p>
+  </section>
+</Base>

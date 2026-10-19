@@ -23,7 +23,7 @@ export default config({
   ui: {
     brand: { name: 'Equilux AI' },
     navigation: {
-      Pages: ['home', 'getStarted', 'tips', 'legal'],
+      Pages: ['home', 'getStarted', 'support', 'tips', 'legal'],
       Site: ['settings'],
     },
   },
@@ -130,6 +130,22 @@ export default config({
           label: 'Google Form URL',
           description: 'The form’s /viewform link; it is embedded on the page.',
         }),
+      },
+    }),
+    support: singleton({
+      label: 'Support',
+      path: 'src/content/support',
+      format: { data: 'yaml' },
+      schema: {
+        heading: fields.text({ label: 'Heading' }),
+        intro: fields.text({ label: 'Intro', multiline: true }),
+        faq: fields.array(
+          fields.object({
+            question: fields.text({ label: 'Question' }),
+            answer: fields.text({ label: 'Answer', multiline: true }),
+          }),
+          { label: 'Questions', itemLabel: (p) => p.fields.question.value }
+        ),
       },
     }),
   },

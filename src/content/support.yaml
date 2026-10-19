@@ -10,4 +10,4 @@ faq:
   - question: A device isn't showing data or responding. What can I try?
     answer: Check that the device is online in its own manufacturer's app, then disconnect and reconnect the provider account in the Equilux app. If it still isn't working, contact us with the device and provider name.
   - question: How do I delete my account?
-    answer: Email us from the email address registered to your account and ask for your account to be deleted. We will delete or anonymise your data as described in our Privacy Policy.
+    answer: Use the "Request account deletion" button below, sending the email from the address registered to your account. We will delete or anonymise your data as described in our Privacy Policy.

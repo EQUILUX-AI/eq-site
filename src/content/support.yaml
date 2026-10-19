@@ -1,0 +1,13 @@
+heading: Support
+intro: Need help with the Equilux AI app? Check the common questions below, or get in touch and we'll help you out.
+faq:
+  - question: How do I reset my password?
+    answer: Use the forgot-password option on the app's sign-in screen, then follow the link we email you. Open the link on the phone where the Equilux app is installed, as password resets can only be completed in the app.
+  - question: My email verification link has expired. What should I do?
+    answer: Request a new verification email from the Equilux app, then open the new link on your phone.
+  - question: Which devices and providers can I connect?
+    answer: Equilux AI currently works with SP Group smart meters, Huawei FusionSolar inverters, Daikin, Mitsubishi Electric, Panasonic and Tuya air-conditioners, Wallbox EV chargers and Tesla vehicles. You can connect them from the app.
+  - question: A device isn't showing data or responding. What can I try?
+    answer: Check that the device is online in its own manufacturer's app, then disconnect and reconnect the provider account in the Equilux app. If it still isn't working, contact us with the device and provider name.
+  - question: How do I delete my account?
+    answer: Email us from the email address registered to your account and ask for your account to be deleted. We will delete or anonymise your data as described in our Privacy Policy.

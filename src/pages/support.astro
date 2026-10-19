@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { reader } from '../lib/reader';
+
+const page = await reader.singletons.support.readOrThrow();
+// Contact details are shared with the home page's Contact section.
+const { contact } = await reader.singletons.home.readOrThrow();
+---
+
+<Base title={page.heading}>
+  <section class="container narrow">
+    <h1>{page.heading}</h1>
+    <p class="lead">{page.intro}</p>
+    {page.faq.map((q) => (
+      <details class="faq">
+        <summary>{q.question}</summary>
+        <p>{q.answer}</p>
+      </details>
+    ))}
+  </section>
+
+  <section class="container narrow contact">
+    <h2>{contact.heading}</h2>
+    <p>📞 <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></p>
+    <p>✉️ <a href={`mailto:${contact.email}`}>{contact.email}</a></p>
+    <p>📍 {contact.address}</p>
+  </section>
+</Base>

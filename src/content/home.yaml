@@ -1,17 +1,19 @@
 hero:
-  heading: Cut Your Home Energy Bills on Autopilot.
-  subheading: Equilux AI optimizes your solar, EV charger, and home appliances in real time—saving you money without changing your routine.
-  image: /images/home/hero.webp
+  heading: Cut Your Home Energy Bills on Autopilot
+  subheading: >-
+    Equilux AI optimizes your solar, EV charger, and home appliances in real
+    time—saving you money without changing your routine.
+  image: /images/home/hero/image.webp
 features:
   - heading: Track Every Watt in Real Time
     body: See exactly what solar panels generate and appliances draw on your mobile.
-    image: /images/home/track.webp
+    image: /images/home/features/0/image.webp
   - heading: Smart Automation, Zero Hassle
     body: Automatically shift heavy electricity usage to low-cost or solar hours.
-    image: /images/home/automation.webp
+    image: /images/home/features/1/image.webp
   - heading: Lower Monthly Utility Bills
     body: Reduce grid dependency and maximize ROI on your smart home or solar setup.
-    image: /images/home/bills.webp
+    image: /images/home/features/2/image.webp
 ctas:
   - label: Book a Free Home Energy Consultation
     href: /get-started
@@ -19,34 +21,58 @@ ctas:
     href: /get-started
 savings:
   heading: Up to 30% Savings on Monthly Energy
-  image: /images/home/savings.webp
+  image: /images/home/savings/image.webp
   items:
     - title: Zero Setup Hassle
-      body: Integrates seamlessly with your existing solar panels, EV charger, and smart appliances.
+      body: >-
+        Integrates seamlessly with your existing solar panels, EV charger, and
+        smart appliances.
     - title: Automated Peak Shifting
-      body: Automatically runs high-energy appliances during peak solar generation or off-peak tariff hours.
+      body: >-
+        Automatically runs high-energy appliances during peak solar generation
+        or off-peak tariff hours.
     - title: Predictive Weather Optimization
-      body: Forecasts solar generation based on real-time weather data to maximize self-consumption.
+      body: >-
+        Forecasts solar generation based on real-time weather data to maximize
+        self-consumption.
 about:
   heading: About Us
   lead: Equilux AI brings intelligent balance to home energy.
-  body: As electricity rates rise, homeowners face constant pressure to manage energy costs. Equilux AI combines adaptive technology with simple, human-centered design to automate your home energy ecosystem.
+  body: >-
+    As electricity rates rise, homeowners face constant pressure to manage
+    energy costs. Equilux AI combines adaptive technology with simple,
+    human-centered design to automate your home energy ecosystem.
   items:
     - title: Continuous Learning
-      body: Our software monitors, learns, and optimizes energy generation and usage in real time.
+      body: >-
+        Our software monitors, learns, and optimizes energy generation and usage
+        in real time.
     - title: Maximum Efficiency
-      body: Achieve perfect equilibrium between your solar output, energy consumption, and grid draw.
+      body: >-
+        Achieve perfect equilibrium between your solar output, energy
+        consumption, and grid draw.
     - title: Effortless Savings
-      body: Enjoy lower monthly utility bills and a reduced carbon footprint without changing your daily habits.
+      body: >-
+        Enjoy lower monthly utility bills and a reduced carbon footprint without
+        changing your daily habits.
 faq:
   heading: Frequently Asked Questions
   items:
     - question: Do I need solar panels or a home battery to use Equilux AI?
-      answer: While Equilux AI delivers maximum savings to homes with solar and battery storage, our smart load-shifting capabilities can also optimize standard grid-connected homes during off-peak tariff hours.
+      answer: >-
+        While Equilux AI delivers maximum savings to homes with solar and
+        battery storage, our smart load-shifting capabilities can also optimize
+        standard grid-connected homes during off-peak tariff hours.
     - question: How hard is it to set up?
-      answer: Installation takes under an hour with no major electrical rewiring required. Our software connects directly to your existing smart meters and smart home devices.
+      answer: >-
+        Installation takes under an hour with no major electrical rewiring
+        required. Our software connects directly to your existing smart meters
+        and smart home devices.
     - question: Will the AI disrupt my home routine?
-      answer: Not at all. You maintain full manual control through our app at any time, while the system works quietly in the background to minimize waste.
+      answer: >-
+        Not at all. You maintain full manual control through our app at any
+        time, while the system works quietly in the background to minimize
+        waste.
 contact:
   heading: Contact Us
   phone: +65 86857249

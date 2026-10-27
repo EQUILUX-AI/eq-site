@@ -9,15 +9,15 @@ features:
     body: >-
       Solar, grid, HVAC, EV charger, and smart devices in a single real-time
       interface.
-    image: /images/home/features/0/image.webp
+    image: /images/home/features/0/image.jpg
   - heading: Physical AI Optimization
     body: >-
       Autonomous, brand-agnostic control of high-load devices using live energy
       data.
-    image: /images/home/features/1/image.webp
+    image: /images/home/features/1/image.jpg
   - heading: Clear Financial Outcome
     body: Monthly recognition of savings — up to 50%.
-    image: /images/home/features/2/image.webp
+    image: /images/home/features/2/image.jpg
 ctas:
   - label: Book a Free Home Energy Consultation
     href: /get-started

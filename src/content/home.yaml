@@ -1,8 +1,8 @@
 hero:
   heading: The Platform for Energy Optimization
-  subheading: >-
-    Equilux AI optimizes your solar, EV charger, and home appliances in real
-    time—saving you money without changing your routine.
+  subheading: |-
+    Physical AI that autonomously optimizes energy
+    devices so solar properties keep more power and pay less.
   image: /images/home/hero/image.webp
 features:
   - heading: Track Every Watt in Real Time

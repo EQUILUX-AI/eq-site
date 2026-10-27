@@ -1,5 +1,5 @@
 hero:
-  heading: Cut Your Home Energy Bills on Autopilot
+  heading: The Platform for Energy Optimization
   subheading: >-
     Equilux AI optimizes your solar, EV charger, and home appliances in real
     time—saving you money without changing your routine.
@@ -37,7 +37,7 @@ savings:
         self-consumption.
 about:
   heading: About Us
-  lead: Equilux AI brings intelligent balance to home energy.
+  lead: Sustainable Energy. Intelligently Managed
   body: >-
     As electricity rates rise, homeowners face constant pressure to manage
     energy costs. Equilux AI combines adaptive technology with simple,
@@ -76,5 +76,5 @@ faq:
 contact:
   heading: Contact Us
   phone: +65 86857249
-  email: thomas.lim@equilux-ai.com
-  address: '3A Pasir Ris Drive 6, #03-29 VIDACITY, Singapore 519422'
+  email: info@equilux-ai.com
+  address: '82 Ubi Ave 4, Edward Boustead Centre, #01-02, Singapore 408832'

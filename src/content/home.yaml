@@ -5,14 +5,18 @@ hero:
     devices so solar properties keep more power and pay less.
   image: /images/home/hero/image.webp
 features:
-  - heading: Track Every Watt in Real Time
-    body: See exactly what solar panels generate and appliances draw on your mobile.
+  - heading: One Unified View
+    body: >-
+      Solar, grid, HVAC, EV charger, and smart devices in a single real-time
+      interface.
     image: /images/home/features/0/image.webp
-  - heading: Smart Automation, Zero Hassle
-    body: Automatically shift heavy electricity usage to low-cost or solar hours.
+  - heading: Physical AI Optimization
+    body: >-
+      Autonomous, brand-agnostic control of high-load devices using live energy
+      data.
     image: /images/home/features/1/image.webp
-  - heading: Lower Monthly Utility Bills
-    body: Reduce grid dependency and maximize ROI on your smart home or solar setup.
+  - heading: Clear Financial Outcome
+    body: Monthly recognition of savings — up to 50%.
     image: /images/home/features/2/image.webp
 ctas:
   - label: Book a Free Home Energy Consultation
@@ -20,7 +24,7 @@ ctas:
   - label: Join the Beta
     href: /get-started
 savings:
-  heading: Up to 30% Savings on Monthly Energy
+  heading: Up to 50% Savings on Monthly Energy
   image: /images/home/savings/image.webp
   items:
     - title: Zero Setup Hassle

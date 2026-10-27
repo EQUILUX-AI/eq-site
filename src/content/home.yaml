@@ -19,9 +19,7 @@ features:
     body: Monthly recognition of savings — up to 50%.
     image: /images/home/features/2/image.jpg
 ctas:
-  - label: Book a Free Home Energy Consultation
-    href: /get-started
-  - label: Join the Beta
+  - label: Get Started Now
     href: /get-started
 savings:
   heading: Up to 50% Savings on Monthly Energy

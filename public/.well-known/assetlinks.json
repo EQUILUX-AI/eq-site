@@ -1,0 +1,28 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.equilux.client",
+      "sha256_cert_fingerprints": [
+        "64:BE:1C:A4:9B:ED:3F:DA:1F:AD:89:E4:C5:60:E6:99:46:DE:62:32:00:AE:F9:A0:74:D8:AF:D9:E4:DE:54:12",
+        "05:92:95:39:B0:CD:A5:E9:57:C6:54:86:A5:BD:CF:52:23:5A:AB:71:EB:CA:69:14:9A:3C:A2:49:51:BF:05:4C"
+      ]
+    }
+  },
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.equilux.client.dev",
+      "sha256_cert_fingerprints": [
+        "64:BE:1C:A4:9B:ED:3F:DA:1F:AD:89:E4:C5:60:E6:99:46:DE:62:32:00:AE:F9:A0:74:D8:AF:D9:E4:DE:54:12",
+        "23:CA:8A:98:A8:17:7C:FE:CE:28:8D:43:E4:AB:14:1F:EE:03:26:DB:3A:61:CC:E8:BD:12:15:50:AF:3D:2B:EC"
+      ]
+    }
+  }
+]

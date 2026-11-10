@@ -1,8 +1,10 @@
 import type { APIRoute } from 'astro';
 
-// iOS Universal Links for the Equilux app. Only /app/oauth-return opens the app
-// (eq-hub's Tesla sign-in hands the user back here, params in the #fragment);
-// every other /app link, e.g. ChottuLink's /app?page=…, keeps opening in the
+// iOS Universal Links for the Equilux app. Only these paths open the app, each
+// with its params in the #fragment:
+//   /app/oauth-return — eq-hub's Tesla sign-in hands the user back here;
+//   /app/admin-login  — eq-admin's one-time phone-login QR (superadmins).
+// Every other /app link, e.g. ChottuLink's /app?page=…, keeps opening in the
 // browser. Served by a function so it gets the application/json type Apple
 // requires; a file without an extension in public/ would not.
 export const prerender = false;
@@ -14,7 +16,10 @@ const body = {
     details: [
       {
         appIDs: APP_IDS,
-        components: [{ '/': '/app/oauth-return', comment: 'Provider sign-in return' }],
+        components: [
+          { '/': '/app/oauth-return', comment: 'Provider sign-in return' },
+          { '/': '/app/admin-login', comment: 'Superadmin phone login (eq-admin QR)' },
+        ],
       },
     ],
   },
